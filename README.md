@@ -1,2 +1,3 @@
-# Credvin-Finance
-Credvin Finance
+# GitHub Ready Merged Project
+
+Merged from 3 source ZIP files.

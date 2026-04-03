@@ -1,0 +1,1 @@
+<full vite.config.js provided>

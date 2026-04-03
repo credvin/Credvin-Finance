@@ -1,0 +1,1 @@
+<full tailwind.config.js provided>
