@@ -1,0 +1,62 @@
+{
+  "name": "DecisionAuditLog",
+  "type": "object",
+  "properties": {
+    "application_id": {
+      "type": "string",
+      "description": "LoanApplication ID"
+    },
+    "applicant_name": {
+      "type": "string"
+    },
+    "previous_decision": {
+      "type": "string",
+      "description": "Decision before override"
+    },
+    "new_decision": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "PENDING"
+      ],
+      "description": "New decision applied"
+    },
+    "decision_source": {
+      "type": "string",
+      "enum": [
+        "credit_engine",
+        "underwriter",
+        "lender",
+        "admin"
+      ],
+      "description": "Who made this decision"
+    },
+    "actor_email": {
+      "type": "string",
+      "description": "Email of person who made decision"
+    },
+    "actor_role": {
+      "type": "string",
+      "description": "Role of person who made decision"
+    },
+    "remarks": {
+      "type": "string",
+      "description": "Mandatory remarks for this decision"
+    },
+    "conditions": {
+      "type": "string",
+      "description": "Optional conditions or requirements"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "application_id",
+    "new_decision",
+    "actor_email",
+    "remarks"
+  ]
+}
