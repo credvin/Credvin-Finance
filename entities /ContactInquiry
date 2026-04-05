@@ -1,0 +1,32 @@
+{
+  "name": "ContactInquiry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Inquiry subject"
+    },
+    "message": {
+      "type": "string",
+      "description": "Inquiry message"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "message"
+  ]
+}
