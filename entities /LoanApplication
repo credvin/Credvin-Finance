@@ -1,0 +1,209 @@
+{
+  "name": "LoanApplication",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Applicant's full name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "loan_type": {
+      "type": "string",
+      "enum": [
+        "personal",
+        "jewellery",
+        "solar",
+        "healthcare",
+        "home_decor",
+        "retail",
+        "education"
+      ]
+    },
+    "loan_amount": {
+      "type": "number"
+    },
+    "tenure_months": {
+      "type": "number"
+    },
+    "monthly_income": {
+      "type": "number"
+    },
+    "employment_type": {
+      "type": "string",
+      "enum": [
+        "salaried",
+        "self_employed",
+        "business_owner",
+        "freelancer"
+      ]
+    },
+    "selfie_url": {
+      "type": "string"
+    },
+    "aadhaar_url": {
+      "type": "string"
+    },
+    "pan_url": {
+      "type": "string"
+    },
+    "bank_statement_url": {
+      "type": "string"
+    },
+    "payslip_url": {
+      "type": "string"
+    },
+    "itr_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "under_review",
+        "approved",
+        "rejected",
+        "disbursed",
+        "esign_pending",
+        "emandate_pending",
+        "ready_for_disbursal"
+      ],
+      "default": "submitted"
+    },
+    "uw_decision": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "REFER",
+        "PENDING"
+      ],
+      "default": "PENDING",
+      "description": "AI Credit Engine decision"
+    },
+    "uw_confidence_score": {
+      "type": "number"
+    },
+    "uw_risk_score": {
+      "type": "number"
+    },
+    "uw_approved_amount": {
+      "type": "number"
+    },
+    "uw_eligible_emi": {
+      "type": "number"
+    },
+    "uw_interest_rate": {
+      "type": "number",
+      "description": "Interest rate % per annum"
+    },
+    "uw_fraud_flag": {
+      "type": "boolean"
+    },
+    "uw_kyc_status": {
+      "type": "string"
+    },
+    "uw_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uw_risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uw_bureau_summary": {
+      "type": "object"
+    },
+    "uw_bank_summary": {
+      "type": "object"
+    },
+    "uw_processed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "manual_decision": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "PENDING"
+      ],
+      "description": "Human override decision"
+    },
+    "manual_decision_by": {
+      "type": "string",
+      "description": "Email of person who overrode"
+    },
+    "manual_decision_role": {
+      "type": "string",
+      "description": "Role of person who overrode"
+    },
+    "manual_remarks": {
+      "type": "string",
+      "description": "Mandatory remarks for manual decision"
+    },
+    "manual_conditions": {
+      "type": "string",
+      "description": "Optional conditions"
+    },
+    "final_decision": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "PENDING"
+      ],
+      "description": "Final effective decision (manual overrides AI)"
+    },
+    "decision_history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Full audit trail of all decisions"
+    },
+    "esign_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "esign_completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "emandate_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "emandate_completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "first_emi_date": {
+      "type": "string",
+      "description": "Calculated first EMI date"
+    },
+    "disbursed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "phone",
+    "loan_type",
+    "loan_amount"
+  ]
+}
