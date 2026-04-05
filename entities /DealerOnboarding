@@ -1,0 +1,164 @@
+{
+  "name": "DealerOnboarding",
+  "type": "object",
+  "properties": {
+    "dealer_name": {
+      "type": "string",
+      "description": "Dealer/merchant business name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "education",
+        "electronics",
+        "healthcare",
+        "home_decor",
+        "interior",
+        "jewellers",
+        "real_estate",
+        "solar",
+        "vehicle_2w",
+        "vehicle_4w"
+      ],
+      "description": "Dealer category"
+    },
+    "business_type": {
+      "type": "string",
+      "enum": [
+        "proprietorship",
+        "partnership",
+        "trust",
+        "llp",
+        "pvt_ltd"
+      ],
+      "description": "Business type"
+    },
+    "pan": {
+      "type": "string"
+    },
+    "gst": {
+      "type": "string"
+    },
+    "authorised_signatory_name": {
+      "type": "string"
+    },
+    "authorised_signatory_designation": {
+      "type": "string"
+    },
+    "authorised_signatory_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "authorised_signatory_phone": {
+      "type": "string"
+    },
+    "bank_name": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "ifsc_code": {
+      "type": "string"
+    },
+    "account_type": {
+      "type": "string",
+      "enum": [
+        "current",
+        "savings"
+      ]
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "subvention",
+        "roi",
+        "hybrid"
+      ]
+    },
+    "tenure_months": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Selected tenures in months"
+    },
+    "tenure_rates": {
+      "type": "object",
+      "description": "Agreed rates per tenure, e.g. {\"3\": 14, \"6\": 12}"
+    },
+    "emi_protection": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "pan_url": {
+      "type": "string"
+    },
+    "gst_url": {
+      "type": "string"
+    },
+    "registration_url": {
+      "type": "string"
+    },
+    "cancelled_cheque_url": {
+      "type": "string"
+    },
+    "moa_url": {
+      "type": "string",
+      "description": "MOA document URL"
+    },
+    "aoa_url": {
+      "type": "string",
+      "description": "AOA document URL"
+    },
+    "partnership_deed_url": {
+      "type": "string"
+    },
+    "terms_accepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "under_review",
+        "approved",
+        "rejected"
+      ],
+      "default": "draft"
+    },
+    "rejection_reason": {
+      "type": "string"
+    },
+    "admin_notes": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "dealer_name",
+    "category",
+    "email",
+    "phone"
+  ]
+}
