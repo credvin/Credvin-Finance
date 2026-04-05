@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Vibrant navy + gold palette */
+    --background: 210 30% 98%;
+    --foreground: 218 34% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 218 45% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 45% 10%;
+    --primary: 215 85% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 152 70% 38%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 25% 93%;
+    --muted-foreground: 218 14% 48%;
+    --accent: 152 70% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 86%;
+    --input: 215 20% 86%;
+    --ring: 215 85% 32%;
+    --radius: 0.75rem;
+    --chart-1: 215 85% 32%;
+    --chart-2: 152 70% 38%;
+    --chart-3: 280 65% 60%;
+    --chart-4: 42 88% 46%;
+    --chart-5: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 218 40% 6%;
+    --foreground: 42 30% 95%;
+    --card: 218 38% 10%;
+    --card-foreground: 42 30% 95%;
+    --popover: 218 38% 10%;
+    --popover-foreground: 42 30% 95%;
+    --primary: 218 72% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 88% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 218 25% 17%;
+    --muted-foreground: 218 14% 62%;
+    --accent: 42 88% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 20% 22%;
+    --input: 218 20% 22%;
+    --ring: 218 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-jakarta);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium card hover lift */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px -12px rgba(16, 39, 90, 0.18);
+}
+
+/* Gold gradient text utility */
+.text-gold {
+  background: linear-gradient(135deg, #c9930a 0%, #f0b429 50%, #c9930a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium section dividers */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+}
