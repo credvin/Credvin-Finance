@@ -1,0 +1,40 @@
+{
+  "name": "PartnerInquiry",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Company/bank name"
+    },
+    "contact_person": {
+      "type": "string",
+      "description": "Contact person name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "company_type": {
+      "type": "string",
+      "enum": [
+        "bank",
+        "nbfc",
+        "microfinance",
+        "other"
+      ],
+      "description": "Type of lending institution"
+    },
+    "message": {
+      "type": "string",
+      "description": "Partnership inquiry details"
+    }
+  },
+  "required": [
+    "company_name",
+    "contact_person",
+    "email"
+  ]
+}
